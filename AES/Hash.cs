@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace Hashcoder
+namespace AES
 {
     public class Hash
     {

@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Hashcoder
+namespace AES.Encryption
 {
     public class EncryptionAES
     {

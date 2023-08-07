@@ -1,5 +1,5 @@
-﻿using Hashcoder;
-using System.Text;
+﻿using AES.Encryption;
+using AES.Post;
 
 Console.WriteLine();
 /*var passwordDesHashAes = CriptyAES.descifrarTextoAES(passwordHashAes, key, saltText);

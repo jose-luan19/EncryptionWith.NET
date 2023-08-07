@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace Hashcoder
+namespace AES.Post
 {
     public static class PostMessageEncrypt
     {
