@@ -52,7 +52,7 @@ namespace Api.Service
             {
                 var cipherBytes = Convert.FromBase64String(message);
 
-                var path = File.ReadAllText("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\Api\\Configuration\\private_key.pem");
+                var path = File.ReadAllText("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\Api\\Configuration\\privateKeyGenerateKeySecrets.pem");
 
                 using (RSA rsa = RSA.Create())
                 {

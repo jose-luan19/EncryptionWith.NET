@@ -21,6 +21,13 @@ namespace AES
                    Convert.ToBase64String(hash);
         }
 
+        private static byte[] GetPbkdf2Bytes(string password, byte[] salt, int iterations, int outputBytes)
+        {
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt);
+            pbkdf2.IterationCount = iterations;
+            return pbkdf2.GetBytes(outputBytes);
+        }
+
         public static bool ValidatePassword(string password, string correctHash)
         {
             char[] delimiter = { ':' };
@@ -41,13 +48,6 @@ namespace AES
                 diff |= (uint)(a[i] ^ b[i]);
             }
             return diff == 0;
-        }
-
-        private static byte[] GetPbkdf2Bytes(string password, byte[] salt, int iterations, int outputBytes)
-        {
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt);
-            pbkdf2.IterationCount = iterations;
-            return pbkdf2.GetBytes(outputBytes);
         }
     }
 }
