@@ -9,12 +9,24 @@ namespace RSAClass
         public static string cifrarTextoRSA(string text)
         {
 
-            var certificate = new X509Certificate2("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\RSA\\certificate.cer");
 
             string cipher;
             try
             {
+
+                /*var path = File.ReadAllText("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\RSA\\public_key.pem");
+                using (RSA rsa = RSA.Create(2048))
+                {
+                    rsa.ImportFromPem(path);
+
+                    var encryptedData = rsa.Encrypt(textBytes, RSAEncryptionPadding.OaepSHA256);
+
+                    cipher = Convert.ToBase64String(encryptedData);
+                }*/
+
                 var textBytes = Encoding.Unicode.GetBytes(text);
+
+                var certificate = new X509Certificate2("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\RSA\\certificate.cer");
 
                 var rsaCertPublic = certificate.GetRSAPublicKey();
 
@@ -41,7 +53,7 @@ namespace RSAClass
 
                 var path = File.ReadAllText("C:\\Users\\luan_costa\\keys\\privateKeyGenerateKeySecrets.pem");
 
-                using (RSA rsa = RSA.Create())
+                using (RSA rsa = RSA.Create(2048))
                 {
                     rsa.ImportFromPem(path);
 
