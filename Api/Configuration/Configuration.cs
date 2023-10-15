@@ -28,11 +28,7 @@ namespace Api.Configuration
             Configuration? configuration = null;
             if(GlobalSettings.Configuration == null)
             {
-                string file = "";
-#if DEVELOPMENT
-                file = "appsettings.Development.json";
-#endif
-
+                string file = "appsettings.json";
                 var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 if(path == null) 
                 {

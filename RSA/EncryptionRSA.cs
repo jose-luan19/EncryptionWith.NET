@@ -26,7 +26,7 @@ namespace RSAClass
 
                 var textBytes = Encoding.Unicode.GetBytes(text);
 
-                var certificate = new X509Certificate2(".\\certificate.cer");
+                var certificate = new X509Certificate2("certificate.cer");
 
                 var rsaCertPublic = certificate.GetRSAPublicKey();
 
