@@ -11,10 +11,10 @@ Console.WriteLine(password + "\n");
 var cipher = EncryptionRSA.cifrarTextoRSA(password);
 Console.WriteLine(cipher + "\n");
 
-var decrypt = EncryptionRSA.descifrarTextoRSA(cipher);
-Console.WriteLine(decrypt + "\n");
-/*var decrypt = PostMessageEncrypt.PostRSA(cipher);
-Console.WriteLine(decrypt);*/
+//var decrypt = EncryptionRSA.descifrarTextoRSA(cipher);
+//Console.WriteLine(decrypt + "\n");
+var decrypt = PostMessageEncrypt.PostRSA(cipher);
+Console.WriteLine(decrypt);
 
 Console.WriteLine("\nStrings iguais: " + string.Equals(decrypt, password));
 

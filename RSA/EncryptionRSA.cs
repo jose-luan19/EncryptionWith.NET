@@ -26,7 +26,7 @@ namespace RSAClass
 
                 var textBytes = Encoding.Unicode.GetBytes(text);
 
-                var certificate = new X509Certificate2("C:\\Users\\luan_costa\\source\\repos\\Hashcoder\\RSA\\certificate.cer");
+                var certificate = new X509Certificate2(".\\certificate.cer");
 
                 var rsaCertPublic = certificate.GetRSAPublicKey();
 
@@ -51,7 +51,7 @@ namespace RSAClass
             {
                 var cipherBytes = Convert.FromBase64String(cipher);
 
-                var path = File.ReadAllText("C:\\Users\\luan_costa\\keys\\privateKeyGenerateKeySecrets.pem");
+                var path = File.ReadAllText(".\\privateKeyGenerateKeySecrets.pem");
 
                 using (RSA rsa = RSA.Create(2048))
                 {

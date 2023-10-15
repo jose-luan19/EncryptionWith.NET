@@ -15,13 +15,16 @@ namespace AES.Post
 
             var response = client.Execute(request).Content;
 
-            var charsToRemove = new string[] { "\"" };
-            foreach (var c in charsToRemove)
+            if (response != null)
             {
-                response = response.Replace(c, string.Empty);
+                var charsToRemove = new string[] { "\"" };
+                foreach (var c in charsToRemove)
+                {
+                    response = response.Replace(c, string.Empty);
+                }
             }
 
-            return response;
+            return response ?? "";
         }
 
     }
